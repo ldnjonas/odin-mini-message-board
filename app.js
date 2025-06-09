@@ -25,7 +25,7 @@ app.use(express.static(assetsPath));
 app.use(express.urlencoded({ extended: true }));
 
  
-const PORT = 3000;
+const PORT = 8000;
 app.listen(PORT, () => {
   console.log(`My first Express app - listening on port ${PORT}!`);
 })
