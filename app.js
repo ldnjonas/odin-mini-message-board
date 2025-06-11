@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: true }));
  
 const PORT = 8000;
 app.listen(PORT, () => {
+  console.log('Latest Version')
   console.log(`My first Express app - listening on port ${PORT}!`);
 })
 
