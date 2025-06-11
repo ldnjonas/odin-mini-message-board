@@ -9,6 +9,12 @@ async function insertPost(username){
     await pool.query("INSERT INTO usernames (username) VALUES ($1)", [username]);
 }
 
+async function getPosts(){
+    const usernames = await pool.query("SELECT * FROM usernames")
+    return usernames
+}
+
 module.exports = {
-    insertPost
+    insertPost,
+    getPosts
 }

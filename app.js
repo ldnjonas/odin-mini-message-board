@@ -50,5 +50,11 @@ app.post("/new", (req,res) => {
 
 app.post("/db", (req, res) => {
     console.log("HIere")
-    db.insertPost()
+    db.insertPost("dddd")
+})
+
+app.get("/db", (req, res) => {
+  console.log("get route")
+  console.log(db.getPosts())
+
 })
