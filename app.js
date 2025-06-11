@@ -1,6 +1,10 @@
 const path = require("node:path");
 const express = require("express");
 const app = express();
+const db = require("./db/queries");
+
+const { body, validationResult } = require("express-validator");
+
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
@@ -41,4 +45,9 @@ app.get("/new", (req, res) => {
 app.post("/new", (req,res) => {
     messages.push({ text: req.body.message, user: req.body.author, added: new Date() });
     res.redirect("/")
+})
+
+app.post("/db", (req, res) => {
+    console.log("HIere")
+    db.insertPost()
 })
